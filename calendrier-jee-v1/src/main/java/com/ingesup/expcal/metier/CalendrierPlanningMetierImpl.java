@@ -124,38 +124,38 @@ public class CalendrierPlanningMetierImpl implements ICalendrierPlanningEtudiant
 
 	@Override
 	public Long addEtudiant(Etudiant etudiant) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return dao.addEtudiant(etudiant);
 	}
 
 	@Override
 	public List<Etudiant> getAllEtudiants() {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.getAllEtudiants();
 	}
 
 	@Override
 	public Long updateEtudiant(Etudiant e) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.updateEtudiant(e);
 	}
 
 	@Override
 	public void removeEtudiant(Long idEtudiant) {
-		// TODO Auto-generated method stub
+		dao.removeEtudiant(idEtudiant);
 		
 	}
 
 	@Override
 	public Etudiant getEtudiant(Long idEtudiant) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.getEtudiant(idEtudiant);
 	}
 
 	@Override
 	public List<Etudiant> findEtudiantByMotCle(String motCle) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.findEtudiantByMotCle(motCle);
 	}
 	
 	

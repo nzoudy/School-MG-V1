@@ -5,6 +5,7 @@ import java.util.List;
 import com.ingesup.expcal.entities.Etudiant;
 
 public interface ICalendrierPlanningEtudiantMetier extends ICalendrierPlanningProfesseurMetier {
+	
 	public Long addEtudiant(Etudiant etudiant);
 
 	public List<Etudiant> getAllEtudiants();

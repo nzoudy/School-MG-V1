@@ -82,6 +82,10 @@ public class Professeur implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	public Professeur(String professeurName) {
+		super();
+		this.professeurName = professeurName;
+	}
 	
 	
 	

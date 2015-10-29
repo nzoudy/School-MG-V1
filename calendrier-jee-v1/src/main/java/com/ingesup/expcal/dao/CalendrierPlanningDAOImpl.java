@@ -71,14 +71,18 @@ public class CalendrierPlanningDAOImpl implements ICalendrierPlanningDAO {
 	
 	@Override
 	public Long addProfesseur(Professeur professeur) {
-		// TODO Auto-generated method stub
-		return null;
+		if (professeur != null) {
+			em.persist(professeur);
+		} else {
+			throw new RuntimeException("Veuillez renseigner tous les champs du prof");
+		}
+		return professeur.getIdProfesseur();
 	}
 
 	@Override
 	public List<Professeur> getAllProfesseurs() {
-		// TODO Auto-generated method stub
-		return null;
+		Query requete = em.createQuery("select p from Professeur p");
+		return requete.getResultList();
 	}
 
 	@Override
