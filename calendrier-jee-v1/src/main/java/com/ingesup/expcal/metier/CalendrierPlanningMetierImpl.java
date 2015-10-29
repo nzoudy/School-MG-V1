@@ -46,117 +46,101 @@ public class CalendrierPlanningMetierImpl implements ICalendrierPlanningEtudiant
 
 	@Override
 	public List<Professeur> findProfesseurByMotCle(String motCle) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.findProfesseurByMotCle(motCle);
 	}
 
 	@Override
 	public Long addMatiere(Matiere matiere) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.addMatiere(matiere);
 	}
 
 	@Override
 	public List<Matiere> getAllMatieres() {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.getAllMatieres();
 	}
 
 	@Override
-	public Long updateMatiere(Matiere e) {
-		// TODO Auto-generated method stub
-		return null;
+	public Long updateMatiere(Matiere m) {
+		return dao.updateMatiere(m);
 	}
 
 	@Override
 	public void removeMatiere(Long idMatiere) {
-		// TODO Auto-generated method stub
-		
+		dao.removeMatiere(idMatiere);
 	}
 
 	@Override
 	public Matiere getMatiere(Long idMatiere) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.getMatiere(idMatiere);
 	}
 
 	@Override
 	public List<Matiere> findMatiereByMotCle(String motCle) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.findMatiereByMotCle(motCle);
 	}
 
 	@Override
 	public Long addFormation(Formation formation) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.addFormation(formation);
 	}
 
 	@Override
 	public List<Formation> getAllFormations() {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.getAllFormations();
 	}
 
 	@Override
-	public Long updateFormation(Formation e) {
-		// TODO Auto-generated method stub
-		return null;
+	public Long updateFormation(Formation f) {
+		return dao.updateFormation(f);
 	}
 
 	@Override
 	public void removeFormation(Long idFormation) {
-		// TODO Auto-generated method stub
-		
+		dao.removeFormation(idFormation);
 	}
 
 	@Override
 	public Formation getFormation(Long idFormation) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.getFormation(idFormation);
 	}
 
 	@Override
 	public List<Formation> findFormationByMotCle(String motCle) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.findFormationByMotCle(motCle);
 	}
 
 	@Override
 	public Long addEtudiant(Etudiant etudiant) {
-		
 		return dao.addEtudiant(etudiant);
 	}
 
 	@Override
 	public List<Etudiant> getAllEtudiants() {
-		// TODO Auto-generated method stub
 		return dao.getAllEtudiants();
 	}
 
 	@Override
 	public Long updateEtudiant(Etudiant e) {
-		// TODO Auto-generated method stub
 		return dao.updateEtudiant(e);
 	}
 
 	@Override
 	public void removeEtudiant(Long idEtudiant) {
 		dao.removeEtudiant(idEtudiant);
-		
 	}
 
 	@Override
 	public Etudiant getEtudiant(Long idEtudiant) {
-		// TODO Auto-generated method stub
 		return dao.getEtudiant(idEtudiant);
 	}
 
 	@Override
 	public List<Etudiant> findEtudiantByMotCle(String motCle) {
-		// TODO Auto-generated method stub
 		return dao.findEtudiantByMotCle(motCle);
 	}
 	
+	public List<Etudiant> findAllEtudiantByFormation(Long idFormation){
+		return dao.findAllEtudiantByFormation(idFormation);
+	}
 	
 }

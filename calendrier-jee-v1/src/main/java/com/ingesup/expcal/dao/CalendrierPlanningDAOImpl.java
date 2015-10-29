@@ -53,8 +53,7 @@ public class CalendrierPlanningDAOImpl implements ICalendrierPlanningDAO {
 
 	@Override
 	public Etudiant getEtudiant(Long idEtudiant) {
-		Etudiant etudiant = em.find(Etudiant.class, idEtudiant );
-		if(etudiant != null){
+		if(idEtudiant != null){
 			return em.find(Etudiant.class, idEtudiant );
 		}
 		else
@@ -63,7 +62,7 @@ public class CalendrierPlanningDAOImpl implements ICalendrierPlanningDAO {
 
 	@Override
 	public List<Etudiant> findEtudiantByMotCle(String motCle) {
-		Query requete = em.createQuery("select e from Etudiant e where nameEtudiant like :x");
+		Query requete = em.createQuery("select e from Etudiant e where e.nomEtudiant like :x or e.email like :x");
 		requete.setParameter("x", "%"+motCle+"%");	
 		return requete.getResultList();
 	}
@@ -87,99 +86,113 @@ public class CalendrierPlanningDAOImpl implements ICalendrierPlanningDAO {
 
 	@Override
 	public Long updateProfesseur(Professeur e) {
-		// TODO Auto-generated method stub
-		return null;
-
+		em.merge(e);
+		return e.getIdProfesseur();
 	}
 
 	@Override
 	public void removeProfesseur(Long idProfesseur) {
-		// TODO Auto-generated method stub
-
+		Professeur prof = em.find(Professeur.class, idProfesseur);
+		em.remove(prof);
 	}
 
 	@Override
 	public Professeur getProfesseur(Long idProfesseur) {
-		// TODO Auto-generated method stub
-		return null;
+		if(idProfesseur != null){
+			return em.find(Professeur.class, idProfesseur );
+		}
+		else
+			throw new RuntimeException("Professeur introuvable");
 	}
 
 	@Override
 	public List<Professeur> findProfesseurByMotCle(String motCle) {
-		// TODO Auto-generated method stub
-		return null;
+		Query requete = em.createQuery("select p from Professeur p where p.professeurName like :x or p.email like :x");
+		requete.setParameter("x", "%"+motCle+"%");	
+		return requete.getResultList();
 	}
 
 	@Override
 	public Long addFormation(Formation formation) {
-		// TODO Auto-generated method stub
-		return null;
+		if (formation != null) {
+			em.persist(formation);
+		} else {
+			throw new RuntimeException("Veuillez renseigner tous les champs");
+		}
+		return formation.getIdFormation();
 	}
 
 	@Override
 	public List<Formation> getAllFormations() {
-		// TODO Auto-generated method stub
-		return null;
+		Query requete = em.createQuery("select f from Formation f");
+		return requete.getResultList();
 	}
 
 	@Override
-	public Long updateFormation(Formation e) {
-		// TODO Auto-generated method stub
-		return null;
+	public Long updateFormation(Formation f) {
+		em.merge(f);
+		return f.getIdFormation();
 	}
 
 	@Override
 	public void removeFormation(Long idFormation) {
-		// TODO Auto-generated method stub
+		em.remove(idFormation);
 
 	}
 
 	@Override
 	public Formation getFormation(Long idFormation) {
-		// TODO Auto-generated method stub
-		return null;
+		return em.find(Formation.class, idFormation);
 	}
 
 	@Override
 	public List<Formation> findFormationByMotCle(String motCle) {
-		// TODO Auto-generated method stub
-		return null;
+		Query requete = em.createQuery("select f from Formation f where f.nomFormation like :x or f.degre like :x");
+		requete.setParameter("x", "%"+motCle+"%");	
+		return requete.getResultList();
 	}
 
 	@Override
 	public Long addMatiere(Matiere matiere) {
-		// TODO Auto-generated method stub
-		return null;
+		em.persist(matiere);
+		return matiere.getIdMatiere();
 	}
 
 	@Override
 	public List<Matiere> getAllMatieres() {
-		// TODO Auto-generated method stub
-		return null;
+		Query requete = em.createQuery("select m from Matiere m");	
+		return requete.getResultList();
 	}
 
 	@Override
 	public Long updateMatiere(Matiere matiere) {
-		// TODO Auto-generated method stub
-		return null;
+		em.merge(matiere);
+		return matiere.getIdMatiere();
 	}
 
 	@Override
 	public void removeMatiere(Long idMatiere) {
-		// TODO Auto-generated method stub
-
+		Matiere matiere = em.find(Matiere.class, idMatiere);
+		em.remove(matiere);
 	}
 
 	@Override
 	public Matiere getMatiere(Long idMatiere) {
-		// TODO Auto-generated method stub
-		return null;
+		return em.find(Matiere.class, idMatiere);
 	}
 
 	@Override
 	public List<Matiere> findMatiereByMotCle(String motCle) {
-		// TODO Auto-generated method stub
-		return null;
+		Query requete = em.createQuery("select m from Matiere m where m.nomMatiere like :x or m.descriptionMatiere like :x");
+		requete.setParameter("x", "%"+motCle+"%");	
+		return requete.getResultList();
 	}
-
+	
+	@Override
+	public List<Etudiant> findAllEtudiantByFormation(Long idFormation){
+		
+		Query req = em.createQuery("select e from Etudiant e where e.formation.idEtudiant =:x");
+		req.setParameter("x", idFormation);
+		return req.getResultList();
+	}
 }

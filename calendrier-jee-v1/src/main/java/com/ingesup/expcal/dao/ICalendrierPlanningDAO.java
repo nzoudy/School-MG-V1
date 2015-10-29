@@ -40,7 +40,7 @@ public interface ICalendrierPlanningDAO {
 
 	public List<Formation> getAllFormations();
 
-	public Long updateFormation(Formation e);
+	public Long updateFormation(Formation f);
 
 	public void removeFormation(Long idFormation);
 
@@ -53,12 +53,17 @@ public interface ICalendrierPlanningDAO {
 
 	public List<Matiere> getAllMatieres();
 
-	public Long updateMatiere(Matiere e);
+	public Long updateMatiere(Matiere m);
 
 	public void removeMatiere(Long idMatiere);
 
 	public Matiere getMatiere(Long idMatiere);
 
 	public List<Matiere> findMatiereByMotCle(String motCle);
+	
+	
+	//--------------Others--------------------------------------
+	
+	public List<Etudiant> findAllEtudiantByFormation(Long idFormation);
 
 }

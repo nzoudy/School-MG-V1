@@ -17,5 +17,7 @@ public interface ICalendrierPlanningEtudiantMetier extends ICalendrierPlanningPr
 	public Etudiant getEtudiant(Long idEtudiant);
 
 	public List<Etudiant> findEtudiantByMotCle(String motCle);
+	
+	public List<Etudiant> findAllEtudiantByFormation(Long idFormation);
 
 }
