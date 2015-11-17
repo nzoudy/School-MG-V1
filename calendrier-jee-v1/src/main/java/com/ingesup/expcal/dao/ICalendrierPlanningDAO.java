@@ -14,7 +14,7 @@ public interface ICalendrierPlanningDAO {
 
 	public List<Etudiant> getAllEtudiants();
 
-	public Long updateEtudiant(Etudiant e);
+	public void updateEtudiant(Long idEtudiant);
 
 	public void removeEtudiant(Long idEtudiant);
 

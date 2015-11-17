@@ -120,8 +120,8 @@ public class CalendrierPlanningMetierImpl implements ICalendrierPlanningEtudiant
 	}
 
 	@Override
-	public Long updateEtudiant(Etudiant e) {
-		return dao.updateEtudiant(e);
+	public void updateEtudiant(Long idEtudiant) {
+		dao.updateEtudiant(idEtudiant);
 	}
 
 	@Override

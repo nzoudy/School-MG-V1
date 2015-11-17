@@ -33,12 +33,13 @@ public class CalendrierPlanningDAOImpl implements ICalendrierPlanningDAO {
 	}
 
 	@Override
-	public Long updateEtudiant(Etudiant e) {
-		if (e != null)
-			em.merge(e);
+	public void updateEtudiant(Long idEtudiant) {
+		if (idEtudiant != null){
+			Etudiant etudiant = em.find(Etudiant.class, idEtudiant);
+			em.merge(etudiant);
+		}
 		else
 			throw new RuntimeException("Veuillez renseigner tous les champs");
-		return e.getIdEtudiant();
 	}
 
 	@Override
