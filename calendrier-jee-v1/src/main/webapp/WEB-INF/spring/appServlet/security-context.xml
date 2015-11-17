@@ -1,0 +1,29 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
+
+	<http auto-config="true" use-expressions="true">
+		<intercept-url pattern="/admin/*" 
+			access="hasAnyRole('ROLE_ADMIN', 'ROLE_MODERATOR')" />
+	</http>
+	
+	<beans:import resource="servlet-context.xml"/>
+	
+	<authentication-manager>
+		<authentication-provider>
+			<password-encoder ref="encoder" />
+			<user-service>
+				<user name="admin" password="$2a$12$Q.XtW/NQa7Uvxw1X93lOW.JsNIGXhezWJFCbwF3G5C9cF1CSB/KDK" 
+					  authorities="ROLE_ADMIN"/>
+			</user-service>
+		</authentication-provider>
+	</authentication-manager>
+	
+</beans:beans>
