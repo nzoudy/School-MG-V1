@@ -1,8 +1,8 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="f"%>
 <head>
-<link rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/resources/css/commons-style.css" />
+<link rel="stylesheet" type="text/css" 	href="<%=request.getContextPath()%>/resources/css/commons-style.css" />	
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/bootstrap-min-3-0.css" />
 </head>
 
 <div class="errors">${exception}</div>
@@ -11,14 +11,15 @@
 	<img alt="" src="<%=request.getContextPath()%>/resources/images/cursus-ingesup.png">
 </div>
  --%>
-<div id="formEtudiant" class="cadre">
+<div id="formEtudiant" class="contenaire">
 	<span>
 		<a href="<c:url value='/j_spring_security_logout' />">Logout</a> 
 		FILL THE STUDENT'S FORM
 	</span> <br>
 	<img alt="" src="<%=request.getContextPath()%>/resources/images/cursus-ingesup.png"><br>
 	<f:form modelAttribute="etudiant" action="saveEtudiant" method="POST">
-		<table>
+		<div class="fixed-table-responsive">
+			<table class="table table-hover">
 			<tr>
 				<td>Nom</td>
 				<td><f:input path="nomEtudiant" /></td>
@@ -78,6 +79,8 @@
 				<td><input type="submit" value="Enregistrer" /></td>
 			</tr>
 		</table>
+		</div>
+		
 	</f:form>
 </div>
 
