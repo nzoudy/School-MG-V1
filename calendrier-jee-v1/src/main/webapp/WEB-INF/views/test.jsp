@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Hello from private page !</h1>
-	<a href="<c:url value='/j_spring_security_logout' />" >Logout</a>
+<a href="<c:url value='/j_spring_security_logout' />" >Logout</a>
+<h2>here's test page</h2>
 </body>
 </html>

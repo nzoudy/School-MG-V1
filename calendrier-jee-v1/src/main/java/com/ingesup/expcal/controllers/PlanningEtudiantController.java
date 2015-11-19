@@ -43,22 +43,7 @@ public class PlanningEtudiantController implements HandlerExceptionResolver{
 		return "etudiants";
 	}
 	
-	@RequestMapping(value="/suppEtudiant")
-	public String supprimerEtudiant(Long idEtudiant, Model model){
-		etudiantMetier.removeEtudiant(idEtudiant);
-		model.addAttribute("etudiant", new Etudiant());
-		model.addAttribute("etudiants", etudiantMetier.getAllEtudiants());
-		return "etudiants";
-	}
 	
-	@RequestMapping(value="/editEtudiant")
-	public String editerEtudiant(Long idEtudiant, Model model){
-		Etudiant etudiant = etudiantMetier.getEtudiant(idEtudiant);
-		model.addAttribute("etudiant", etudiant);
-		model.addAttribute("etudiants", etudiantMetier.getAllEtudiants());
-		return "etudiants";
-	}
-
 	@Override
 	public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object arg2,
 			Exception ex) {

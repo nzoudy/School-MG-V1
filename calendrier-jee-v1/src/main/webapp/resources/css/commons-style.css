@@ -1,18 +1,34 @@
 
 /* comment here */
 
-#formEtudiant {
+#content-index { /* background-image: url("paper.gif"); */
 	display: block;
 	width : 700px;
     margin: 15 auto;
     background-color: rgba(100, 200, 155, 0.6);
+    background-color: #cccccc;
+    text-align: center;
+    
+    /* background: url("/resources/images/main-entry.png") fixed no-repeat top left,  
+	url("/resources/images/other.png") fixed no-repeat top right;  */
 }
+
+#formEtudiant {     
+	background-color: rgba(100, 200, 155, 0.6);
+	display: block;
+	width : 700px;
+    margin: 15 auto;
+    background-image: url("paper.gif");
+    background-color: #cccccc;
+}
+
 .cadre{
 	border: 2px solid gray;
 	border-radius:10px;
 	padding: 10px;
 	text-align: center;
 }
+
 #tabEtudiant{
 	display: block;
 	width : 700px;
