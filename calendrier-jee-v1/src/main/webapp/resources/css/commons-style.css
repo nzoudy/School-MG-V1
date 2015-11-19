@@ -1,50 +1,80 @@
-
 /* comment here */
-
 #content-index { /* background-image: url("paper.gif"); */
 	display: block;
-	width : 700px;
-    margin: 15 auto;
-    background-color: rgba(100, 200, 155, 0.6);
-    background-color: #cccccc;
-    text-align: center;
-    
-    /* background: url("/resources/images/main-entry.png") fixed no-repeat top left,  
-	url("/resources/images/other.png") fixed no-repeat top right;  */
+	width: 700px;
+	height: 80%;
+	margin: 15px auto;
+	background-color: rgba(100, 200, 155, 0.6);
+	/* background-color: #cccccc; */
+	text-align: center; 
 }
 
-#formEtudiant {     
+.main-entry {
+	float: left;
+	padding-top: 10px;
+	margin-left: 25px;
+	position: relative;
+
+}
+
+.description {
+	float: right;
+	width: 300px;
+	height: 300px;
+	display: block;
+	color: black;
+	text-align: left;
+}
+
+.other {
+	float: left;
+	position: relative;
+	margin-left: 25px;
+	margin-top: 25px;
+}
+
+.footer-link {
+	float: left;
+	margin-left: 25px;
+	position: relative;
+	text-align: center;
+}
+
+#formEtudiant {
 	background-color: rgba(100, 200, 155, 0.6);
 	display: block;
-	width : 700px;
-    margin: 15 auto;
-    background-image: url("paper.gif");
-    background-color: #cccccc;
+	width: 700px;
+	margin: 15 auto;
+	background-image: url("paper.gif");
+	background-color: #cccccc;
 }
 
-.cadre{
+.cadre {
 	border: 2px solid gray;
-	border-radius:10px;
+	border-radius: 10px;
 	padding: 13px;
 	text-align: center;
 }
 
-#tabEtudiant{
+#tabEtudiant {
 	display: block;
-	width : 700px;
-    margin: 0 auto;
-    background-color: rgba(100, 200, 155, 0.6);
+	width: 700px;
+	margin: 0 auto;
+	background-color: rgba(100, 200, 155, 0.6);
 }
-.tab1 th{
+
+.tab1 th {
 	border: 1px dotted gray;
 	background: pink;
 	padding: 5px;
 }
-.tab1 td{
+
+.tab1 td {
 	border: 2px solid gray;
 	background: white;
 	padding: 5px;
 }
-.errors{
-	color:red;
+
+.errors {
+	color: red;
 }
