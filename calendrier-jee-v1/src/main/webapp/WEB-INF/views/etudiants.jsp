@@ -7,14 +7,16 @@
 
 <div class="errors">${exception}</div>
 
-<div class="main-entry">
+<%-- <div class="main-entry cadre">
 	<img alt="" src="<%=request.getContextPath()%>/resources/images/cursus-ingesup.png">
 </div>
-
+ --%>
 <div id="formEtudiant" class="cadre">
-
-	<a href="<c:url value='/j_spring_security_logout' />">Logout</a> <span>FILL
-		THE STUDENT'S FORM</span>
+	<span>
+		<a href="<c:url value='/j_spring_security_logout' />">Logout</a> 
+		FILL THE STUDENT'S FORM
+	</span> <br>
+	<img alt="" src="<%=request.getContextPath()%>/resources/images/cursus-ingesup.png"><br>
 	<f:form modelAttribute="etudiant" action="saveEtudiant" method="POST">
 		<table>
 			<tr>
